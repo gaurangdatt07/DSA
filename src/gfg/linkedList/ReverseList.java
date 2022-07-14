@@ -2,15 +2,7 @@ package gfg.linkedList;
 
 public class ReverseList {
 
-    static class Node{
-        Node next;
-        int value;
 
-        public Node(Node next, int value) {
-            this.next = next;
-            this.value = value;
-        }
-    }
 
 
     Node reverseList(Node node){
