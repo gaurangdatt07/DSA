@@ -27,8 +27,8 @@ public class Node {
         four.next=five;
         five.next=six;
 
-        NbyKNode nbyKNode = new NbyKNode();
-
-        System.out.println(nbyKNode.nkNode(first,5));
+//      NbyKNode nbyKNode = new NbyKNode();
+//        ModularNode modularNode = new ModularNode();
+//        System.out.println(modularNode.modularNode(first,3));
     }
 }

@@ -1,6 +1,6 @@
 package gfg.linkedList;
 
-public class InsertInMiddle extends Node{
+public class InsertInMiddle{
 
     Node insertInMiddle(Node head , int data){
 

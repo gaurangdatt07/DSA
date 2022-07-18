@@ -1,6 +1,6 @@
 package gfg.linkedList;
 
-public class NbyKNode extends Node{
+public class NbyKNode{
 
 
     int nkNode(Node head, int k ){
