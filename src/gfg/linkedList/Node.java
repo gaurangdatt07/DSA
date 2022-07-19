@@ -27,6 +27,8 @@ public class Node {
         four.next=five;
         five.next=six;
 
+        MoveLastNodeToFront moveLastNodeToFront = new MoveLastNodeToFront();
+        System.out.println(moveLastNodeToFront.moveLastNodeToFront(first));
 //      NbyKNode nbyKNode = new NbyKNode();
 //        ModularNode modularNode = new ModularNode();
 //        System.out.println(modularNode.modularNode(first,3));
