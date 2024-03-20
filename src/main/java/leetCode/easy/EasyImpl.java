@@ -68,4 +68,21 @@ public class EasyImpl implements Easy{
 
         return true;  // Cycle detected
     }
+
+    @Override
+    public int getDecimalValue(ListNode head) {
+        ListNode temp=head;
+        int count = -1;
+        int sum=0;
+        while(temp!=null){
+            count++; temp=temp.next;
+        }
+        temp=head;
+        while(temp!=null){
+             sum+=temp.val==0?0:Math.pow(2,count);
+             count--;
+             temp=temp.next;
+        }
+        return sum;
+    }
 }
