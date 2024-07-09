@@ -1,5 +1,9 @@
+import leetcode.medium.Medium;
+import leetcode.medium.MediumImpl;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("test");
+        Medium medium=new MediumImpl();
+        medium.removeStars("leet**cod*e");
     }
 }
