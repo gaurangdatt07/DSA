@@ -2,6 +2,9 @@ package leetcode.medium;
 
 import leetcode.ListNode;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
 import java.util.Stack;
 
 public class MediumImpl implements Medium{
@@ -48,5 +51,29 @@ public class MediumImpl implements Medium{
         }
 
         return head;
+    }
+
+    @Override
+    public int[] asteroidCollision(int[] asteroids) {
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int asteroid : asteroids) {
+            while (!stack.isEmpty() && asteroid < 0 && stack.peek() > 0) {
+                if (stack.peek() < -asteroid) {
+                    stack.pop();
+                    continue;
+                } else if (stack.peek() == -asteroid) {
+                    stack.pop();
+                }
+                asteroid = 0;
+            }
+            if (asteroid != 0) {
+                stack.push(asteroid);
+            }
+        }
+        int[] result = new int[stack.size()];
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = stack.pop();
+        }
+        return result;
     }
 }

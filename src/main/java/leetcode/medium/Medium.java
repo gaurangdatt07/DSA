@@ -13,4 +13,9 @@ public interface Medium {
      * url: https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/
      */
     ListNode deleteMiddle(ListNode head);
+
+    /**
+     * url: https://leetcode.com/problems/asteroid-collision/description
+     */
+    int[] asteroidCollision(int[] asteroids);
 }

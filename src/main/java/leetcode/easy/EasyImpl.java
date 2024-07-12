@@ -1,5 +1,7 @@
 package leetcode.easy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -46,5 +48,39 @@ public class EasyImpl implements Easy{
         }
 
         return stringBuilder.toString();
+    }
+
+    @Override
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean>booleans=new ArrayList<>();
+        for (int j : candies) {
+            boolean flag = true;
+            int totalCandies = j + extraCandies;
+            for (int candy : candies) {
+                if (totalCandies < candy) {
+                    flag = false;
+                    break;
+                }
+            }
+            booleans.add(flag);
+        }
+        return booleans;
+    }
+
+    @Override
+    public List<Boolean> kidsWithCandiesOptimised(int[] candies, int extraCandies) {
+        int maxCandies = 0;
+        for (int candy : candies) {
+            if (candy > maxCandies) {
+                maxCandies = candy;
+            }
+        }
+
+        List<Boolean> result = new ArrayList<>(candies.length);
+        for (int candy : candies) {
+            result.add(candy + extraCandies >= maxCandies);
+        }
+
+        return result;
     }
 }
