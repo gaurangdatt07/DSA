@@ -1,9 +1,6 @@
 package leetcode.easy;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Stack;
+import java.util.*;
 
 public class EasyImpl implements Easy{
     @Override
@@ -83,4 +80,110 @@ public class EasyImpl implements Easy{
 
         return result;
     }
+
+    @Override
+    public boolean hasDuplicate(int[] nums) {
+        HashSet<Integer> seen=new HashSet<>();
+        for(int each:nums){
+            if(seen.contains(each)){
+                return true;
+            }
+            seen.add(each);
+        }
+        return false;
+    }
+
+    @Override
+    public int[] twoSum(int[] nums, int target) {
+        for(int i = 0 ;i<nums.length-1;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    return new int[]{i,j};
+                }
+            }
+        }
+        return new int[]{};
+    }
+
+    @Override
+    public int[] twoSumUsingHashMap(int[] nums, int target) {
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int complement = target - nums[i];
+            if(map.containsKey(complement)){
+                return new int[]{map.get(complement),i};
+            }
+            map.put(nums[i],i);
+        }
+        return new int[]{};
+    }
+
+    @Override
+    public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        Map<Character,Integer>sMap=new HashMap<>();
+        Map<Character,Integer>tMap=new HashMap<>();
+        for(int i = 0 ; i <s.length();i++){
+            char sChar = s.charAt(i);
+            sMap.merge(sChar,1,Integer::sum);
+
+            char tChar = t.charAt(i);
+            tMap.merge(tChar,1,Integer::sum);
+        }
+
+        for(Character c:sMap.keySet()){
+            if(!sMap.get(c).equals(tMap.get(c))){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public boolean isAnagramUsingSingleMap(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        Map<Character,Integer>charCount=new HashMap<>();
+        for(int i = 0 ; i <s.length();i++){
+            char sChar = s.charAt(i);
+            charCount.merge(sChar,1,Integer::sum);
+
+            char tChar = t.charAt(i);
+            charCount.merge(tChar,-1,Integer::sum);
+        }
+
+        for(Character c:charCount.keySet()){
+            if(charCount.get(c)!=0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean isPalindrome(String s) {
+        char[] charArray = s.toCharArray();
+        int left=0;
+        int right=s.length()-1;
+        while(left<right){
+            while (left<right&&!Character.isLetterOrDigit(charArray[left])){
+                left++;
+            }
+
+            while (left<right&&!Character.isLetterOrDigit(charArray[right])){
+                right--;
+            }
+            if(Character.toLowerCase(charArray[left])!=Character.toLowerCase(charArray[right])){
+                return false;
+            }
+            right--;
+            left++;
+        }
+        return true;
+    }
+
+
 }
