@@ -185,5 +185,24 @@ public class EasyImpl implements Easy{
         return true;
     }
 
-
+    @Override
+    public boolean isValid(String s) {
+       Stack<Character>characterStack=new Stack<>();
+       HashMap<Character,Character>characterHashMap=new HashMap<>();
+       characterHashMap.put('}','{');
+       characterHashMap.put(')','(');
+       characterHashMap.put(']','[');
+       for(int i = 0 ; i <s.length();i++){
+           Character c=s.charAt(i);
+           if(characterHashMap.containsKey(c)){
+               Character pop = characterStack.pop();
+               if(characterStack.empty()||characterHashMap.get(c)!=pop){
+                   return false;
+               }
+           }else{
+               characterStack.push(c);
+           }
+       }
+       return characterStack.empty();
+    }
 }

@@ -63,4 +63,9 @@ public interface Medium {
     int[] twoSum(int[] numbers, int target);
 
     List<List<Integer>> threeSum(int[] nums);
+
+    /**
+     * https://leetcode.com/problems/min-stack/description/
+     */
+     void MinStack();
 }

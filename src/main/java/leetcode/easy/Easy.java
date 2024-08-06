@@ -39,6 +39,12 @@ public interface Easy {
      */
     boolean isPalindrome(String s);
 
+    /**
+     * https://leetcode.com/problems/valid-parentheses/
+     * @param s
+     * @return
+     */
+    boolean isValid(String s);
 
 
 }

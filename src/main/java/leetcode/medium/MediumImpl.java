@@ -274,4 +274,17 @@ public class MediumImpl implements Medium{
     }
 
 
+    @Override
+    public void MinStack() {
+
+    }
+
+    void push(int val,Stack<Integer>stack,Stack<Integer>minStack){
+
+    }
+
+    void pop(int val,Stack<Integer>stack,Stack<Integer>minStack){
+
+    }
+
 }
