@@ -108,4 +108,45 @@ public class EasyImpl implements Easy{
         //return the new head which is the previousNode.
         return previousNode;
     }
+
+    @Override
+    public boolean containsDuplicate(int[] nums) {
+        // create a hashset
+        Set<Integer>occuredNums=new HashSet<>();
+
+        // traverse the array
+        for(int i :nums){
+            // if the number is present in hashset return true
+            if(occuredNums.contains(i)){
+                return true;
+            }
+            occuredNums.add(i);
+        }
+        return false;
+    }
+
+    @Override
+    public int search(int[] nums, int target) {
+       // set left index as 0 and right index as n-1
+        int left=0;
+       int right= nums.length-1;
+       while (left<=right){
+           // set mid index
+           int mid=(left+right)/2;
+           // if mid index value  is less than target
+           // change left index to mid+1 since target has to occur after mid index
+           if(nums[mid]<target){
+               left=mid+1;
+           }// if mid value is greater than target then chang right index.
+           // since target has to occur before mid
+           else if(nums[mid]>target){
+               right=mid-1;
+           }else{
+               // else mid is the target
+               return mid;
+           }
+       }
+        // return element not found
+       return -1;
+    }
 }

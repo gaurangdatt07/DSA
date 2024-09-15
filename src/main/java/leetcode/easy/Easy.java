@@ -19,4 +19,14 @@ public interface Easy {
      * https://leetcode.com/problems/reverse-linked-list/description/
      */
     ListNode reverseList(ListNode head);
+    /**
+     * https://leetcode.com/problems/contains-duplicate/description/
+     */
+    boolean containsDuplicate(int[] nums);
+
+    /**
+     * https://leetcode.com/problems/binary-search/description/
+     */
+    int search(int[] nums, int target);
+
 }
