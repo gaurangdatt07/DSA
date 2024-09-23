@@ -9,6 +9,86 @@ import java.util.*;
 public class EasyImpl implements Easy{
 
     @Override
+    public boolean containsDuplicate(int[] nums) {
+        // create a hashset to store numbers that have been encountered.
+        Set<Integer>occuredNums= new HashSet<>();
+
+        // for each number in the array.
+        for(Integer each:nums){
+
+            // if the number is present in set then duplicate is true.
+            if(occuredNums.contains(each)){
+                return true;
+            }
+
+            // else add the number in set as encountered number.
+            occuredNums.add(each);
+        }
+
+        // if no number is encountered then no duplicate is present.
+        return false;
+    }
+
+    @Override
+    public boolean isAnagram(String s, String t) {
+
+        // if length of two string are not equal then return false.
+        if(s.length()!=t.length()){
+            return false;
+        }
+
+        // create new map two keep count of char and its occurance
+        Map<Character,Integer>sMap=new HashMap<>();
+        Map<Character,Integer>tMap=new HashMap<>();
+
+        // traverse through both the strings.
+        for(int i = 0 ; i <s.length();i++){
+
+            // check if character is present in map then increase count
+            char sChar = s.charAt(i);
+            sMap.merge(sChar,1,Integer::sum);
+
+            // check if character is present in map then increase count
+            char tChar = t.charAt(i);
+            tMap.merge(tChar,1,Integer::sum);
+        }
+
+        //for both maps..
+        for(Character c:sMap.keySet()){
+            // if counts are not equal then return false
+            if(!sMap.get(c).equals(tMap.get(c))){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public int[] twoSum(int[] nums, int target) {
+
+        // create a map to store number to index
+        Map<Integer,Integer>complimentMap=new HashMap<>();
+
+        // for each number in arrays
+        for(int i = 0 ; i < nums.length;i++){
+            // get the compliment number.
+            int balance=target-nums[i];
+            //check if the map has the compliment number
+            if(complimentMap.containsKey(balance)){
+                // return array with index.
+                return new int[]{complimentMap.get(balance),i};
+            }
+                // put the number in map if compliment is not found.
+                complimentMap.put(nums[i],i);
+
+        }
+
+        // if no entry is found then return empty array.
+        return new int[]{};
+    }
+
+    @Override
     public boolean isValid(String s) {
         // create a map of brackets
         HashMap<Character,Character>characterHashMap=new HashMap<>();

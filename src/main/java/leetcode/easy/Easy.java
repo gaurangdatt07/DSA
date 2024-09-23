@@ -5,6 +5,25 @@ import leetcode.TreeNode;
 
 
 public interface Easy {
+
+    /**
+     * https://leetcode.com/problems/contains-duplicate/description/
+     * ARRAYS AND HASHING E1
+     */
+    boolean containsDuplicate(int[] nums);
+
+    /**
+     * https://leetcode.com/problems/valid-anagram/
+     * Arrays & Hashing E2
+     */
+    boolean isAnagram(String s, String t);
+
+    /**
+     * https://leetcode.com/problems/two-sum/description/
+     * Arrays & Hashing E3
+     */
+    int[] twoSum(int[] nums, int target);
+
     /**
      * https://leetcode.com/problems/valid-parentheses/description/
      * STACK E1
@@ -28,5 +47,7 @@ public interface Easy {
      * TREE E2
      */
     int maxDepth(TreeNode root);
+
+
 
 }
