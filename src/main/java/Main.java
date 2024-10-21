@@ -1,5 +1,3 @@
-import leetcode.ListNode;
-
 import java.util.Arrays;
 
 public class Main {
