@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.arraysHashingString.easy;
 
 public class _1071_Greatest_Common_Divisor_Of_Strings {
     // https://leetcode.com/problems/greatest-common-divisor-of-strings

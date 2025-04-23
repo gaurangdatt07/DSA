@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.arraysHashingString.easy;
 
 public class _1768_Merge_Strings_Alternately {
 

@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.arraysHashingString.easy.medium;
 
 public class _238_Product_Of_Array_Except_Self {
     // https://leetcode.com/problems/product-of-array-except-self

@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.arraysHashingString.easy;
 
 public class _283_Move_Zeroes {
 

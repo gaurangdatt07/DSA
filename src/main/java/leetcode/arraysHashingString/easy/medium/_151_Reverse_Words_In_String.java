@@ -1,6 +1,4 @@
-package leetcode.medium;
-
-import java.util.Arrays;
+package leetcode.arraysHashingString.easy.medium;
 
 public class _151_Reverse_Words_In_String {
     // https://leetcode.com/problems/reverse-words-in-a-string

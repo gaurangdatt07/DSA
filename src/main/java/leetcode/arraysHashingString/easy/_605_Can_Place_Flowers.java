@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.arraysHashingString.easy;
 
 public class _605_Can_Place_Flowers {
     // https://leetcode.com/problems/can-place-flowers

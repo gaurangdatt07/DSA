@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.arraysHashingString.easy.medium;
 
 public class _443_String_Compression {
     public int compress(char[] chars) {

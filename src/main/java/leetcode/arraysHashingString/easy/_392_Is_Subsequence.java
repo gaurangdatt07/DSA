@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.arraysHashingString.easy;
 
 public class _392_Is_Subsequence {
     // https://leetcode.com/problems/is-subsequence/

@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.arraysHashingString.easy.medium;
 
 public class _11_Container_With_Most_Water {
     // https://leetcode.com/problems/container-with-most-water/

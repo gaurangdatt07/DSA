@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.arraysHashingString.easy.medium;
 
 public class _334_Increasing_Triplet_Subsequences {
     // https://leetcode.com/problems/increasing-triplet-subsequence/
